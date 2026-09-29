@@ -7,8 +7,10 @@ job('First-Maven-Project-Via-DSL') {
         scm('* * * * *')
     }
     steps {
-        maven('clean package', 'pom.xml'){
-              mavenInstallation('Local_maven')
+          maven {
+            goals('clean package')
+            mavenInstallation('Local_maven')
+            pom('pom.xml')
         }
     }
     publishers {
