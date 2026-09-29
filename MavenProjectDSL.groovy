@@ -9,7 +9,7 @@ job('First-Maven-Project-Via-DSL') {
     steps {
           maven('clean package', 'pom.xml') {
     configure { node ->
-        node / mavenName('Local_maven')
+         node / mavenName[0].value = 'Local_maven'
     }
 }
     }
